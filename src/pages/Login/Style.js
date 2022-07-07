@@ -51,4 +51,36 @@ export const DivS = styled.div`
     border: none;
     color: white;
   }
+
+  @media (max-width: 750px) {
+    img {
+      margin-top: 3rem;
+    }
+
+    div {
+      width: 480px;
+      height: 280px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    img {
+      margin-top: 4rem;
+    }
+
+    div {
+      width: 320px;
+      height: 240px;
+    }
+
+    input {
+      height: 30px;
+      width: 300px;
+    }
+
+    button {
+      height: 30px;
+      width: 300px;
+    }
+  }
 `
