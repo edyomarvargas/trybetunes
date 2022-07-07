@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { DivS } from './Style';
+import logo from '../../images/logo.svg';
 
 function Login() {
   const [disabled, setDisabled] = useState(true);
@@ -36,29 +38,32 @@ function Login() {
     navigate('/search');
   }
   return (
-    <div>
-      <input
-        name="email"
-        placeholder="Digite seu e-mail"
-        type="text"
-        onChange={enableButton}
-      />
+    <DivS>
+      <img src={ logo } alt="logo trybetunes" />
+      <div>
+        <input
+          name="email"
+          placeholder="Digite seu e-mail"
+          type="text"
+          onChange={enableButton}
+        />
 
-      <input
-        name="password"
-        placeholder="Digite sua senha"
-        type="password"
-        onChange={enableButton}
-      />
+        <input
+          name="password"
+          placeholder="Digite sua senha"
+          type="password"
+          onChange={enableButton}
+        />
 
-      <button
-        type="button"
-        disabled={disabled}
-        onClick={buttonClick}
-      >
-        Entrar
-      </button>
-    </div>
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={buttonClick}
+        >
+          Entrar
+        </button>
+      </div>
+    </DivS>
   );
 }
 
