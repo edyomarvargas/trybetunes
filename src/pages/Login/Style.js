@@ -1,3 +1,4 @@
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 import styled from 'styled-components';
 
 export const DivS = styled.div`
@@ -50,6 +51,10 @@ export const DivS = styled.div`
     margin-top: 20px;
     border: none;
     color: white;
+
+    :hover {
+      cursor: pointer;
+    }
   }
 
   @media (max-width: 750px) {
