@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { addSong, readFavoriteSongs } from '../../services/favoriteSongsAPI';
+import { addSong, readFavoriteSongs, removeSong } from '../../services/favoriteSongsAPI';
 import { Div } from './Style';
-import { AiOutlineHeart } from 'react-icons/ai';
+import { AiFillHeart } from 'react-icons/ai';
 
-function MusicCard({ trackId, music, player, index }) {
+function MusicCard({ trackId, music, player, index, musics }) {
   const [favorites, setFavorites] = useState([]);
   const [isFav, setIsFav] = useState(false);
 
@@ -20,10 +20,15 @@ function MusicCard({ trackId, music, player, index }) {
     isChecked();
   }, [favorites]);
 
-  const handleChange = async () => {
-    const { musics } = this.props;
+  const handleClick = async () => {
     setIsFav(!isFav);
-    addSong(musics);
+    if (!isFav) {
+      addSong(musics);
+    }
+
+    if (isFav) {
+      removeSong(musics)
+    }
   }
 
   const isChecked = () => {
@@ -43,7 +48,11 @@ function MusicCard({ trackId, music, player, index }) {
           <code>audio</code>
           .
         </audio>
-        <AiOutlineHeart size="26px" className="fav-btn" />
+        <AiFillHeart
+          size="26px"
+          className={ isFav ? 'favorite' : 'not-favorite'}
+          onClick={ handleClick }
+        />
       </Div>
       <hr />
     </section>
