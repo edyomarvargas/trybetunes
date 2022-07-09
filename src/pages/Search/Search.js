@@ -2,26 +2,33 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Loading from '../../components/Loading/Loading';
+import searchAlbums from '../../services/searchAlbumsAPI';
 
 function Search() {
   const [artist, setArtist] = useState('');
   const [disabled, setDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
-  const [searchResult, setSearchResult] = useState('');
+  const [searchResult, setSearchResult] = useState([]);
+
+  const albumsResult = (
+    <p>
+      {`Resultado de álbuns de: ${artist}`}
+    </p>
+  );
 
   const handleClick = async (event) => {
     event.preventDefault();
 
     setLoading(true);
 
-    // const request = await searchAlbums(artist);
+    const request = await searchAlbums(artist);
 
-    setLoading(true);
-    // setSearchResult(request);
+    setLoading(false);
+    setSearchResult(request);
 
-    // if (request.length === 0) {
-    //   setSearchResult(undefined);
-    // }
+    if (request.length === 0) {
+      setSearchResult(undefined);
+    }
   }
 
   const handleChange = ({ target }) => {
@@ -64,7 +71,7 @@ function Search() {
         {
           // Como searchResult pode ser undefined caso a pesquisa não retorne nenhum álbum,
           // preciso garantir que ele tem um valor truthy para ler searchResult.length
-          // searchResult && searchResult.length > 0 && albumsResult
+          searchResult && searchResult.length > 0 && albumsResult
         }
         {
           !searchResult && <p>Nenhum álbum foi encontrado</p>
