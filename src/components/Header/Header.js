@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo.svg';
+import logoWhite from '../../images/logo-white.svg';
 import userPhoto from '../../images/user.svg';
 import { SectionS1 } from './Style';
 
@@ -8,11 +8,11 @@ function Header() {
   return (
     <header>
       <SectionS1>
-        <img src={ logo } alt="logo-trybetunes" id="logo" />
+        <img src={ logoWhite } alt="logo-trybetunes" id="logo" />
 
         <div>
           <img src={ userPhoto } alt="user" id="user-photo" />
-          <p>Usuário</p>
+          <p>user@email.com</p>
         </div>
       </SectionS1>
 
