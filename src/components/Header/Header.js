@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AppContext from '../../context/AppContext';
 import logoWhite from '../../images/logo-white.svg';
 import userPhoto from '../../images/user.svg';
 import { SectionS1, SectionS2 } from './Style';
 
 function Header() {
   const navigate = useNavigate();
+  const { user } = useContext(AppContext);
 
   return (
     <header>
@@ -14,7 +16,7 @@ function Header() {
 
         <div>
           <img src={ userPhoto } alt="user" id="user-photo" />
-          <p>user@email.com</p>
+          <p>{ user.email }</p>
         </div>
       </SectionS1>
 

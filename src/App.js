@@ -8,6 +8,7 @@ import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
 import { createGlobalStyle } from 'styled-components';
+import AppProvider from './context/AppProvider';
 
 function App() {
   const GlobalStyle = createGlobalStyle`
@@ -21,25 +22,27 @@ function App() {
 
   return (
     <main>
-      <GlobalStyle />
-      
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Login />} />
+      <AppProvider>
+        <GlobalStyle />
+        
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<Login />} />
 
-          <Route path="/search" element={<Search />} />
+            <Route path="/search" element={<Search />} />
 
-          <Route path="/album/:id" element={<Album />} />
+            <Route path="/album/:id" element={<Album />} />
 
-          <Route path="/favorites" element={<Favorites />} />
+            <Route path="/favorites" element={<Favorites />} />
 
-          <Route exact path="/profile" element={<Profile />} />
+            <Route exact path="/profile" element={<Profile />} />
 
-          <Route path="/profile/edit" element={<ProfileEdit />} />
+            <Route path="/profile/edit" element={<ProfileEdit />} />
 
-          <Route element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+            <Route element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </AppProvider>
     </main>
   );
 }

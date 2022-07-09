@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DivS } from './Style';
 import logo from '../../images/logo.svg';
+import AppContext from '../../context/AppContext';
 
 function Login() {
   const [disabled, setDisabled] = useState(true);
-  const [user, setUser] = useState({
-    email: '',
-    password: '',
-  })
   const [isEmailValid, setIsEmailValid] = useState(false);
   const navigate = useNavigate();
+  const { user, setUser } = useContext(AppContext);
   const PASSWORD_MIN_LENGTH = 6;
 
 
