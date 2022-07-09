@@ -42,6 +42,7 @@ export const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 40px;
 `
 
 export const Div = styled.div`
