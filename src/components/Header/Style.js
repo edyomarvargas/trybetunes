@@ -63,4 +63,13 @@ export const SectionS2 = styled.section`
     font-weight: 700;
     color: #2FC18C;
   }
+
+  .selected {
+    background: #036B52;
+    color: #FFFFFF;
+  }
+
+  .selected p {
+    color: #FFFFFF;
+  }
 `

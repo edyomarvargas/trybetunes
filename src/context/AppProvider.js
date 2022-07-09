@@ -3,7 +3,7 @@ import AppContext from './AppContext';
 
 function AppProvider({ children }) {
   const [user, setUser] = useState({
-    email: '',
+    email: 'user@email.com',
     password: '',
   });
 

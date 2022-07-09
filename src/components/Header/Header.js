@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 import logoWhite from '../../images/logo-white.svg';
 import userPhoto from '../../images/user.svg';
@@ -7,6 +7,7 @@ import { SectionS1, SectionS2 } from './Style';
 
 function Header() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const { user } = useContext(AppContext);
 
   return (
@@ -21,15 +22,24 @@ function Header() {
       </SectionS1>
 
       <SectionS2>
-        <div onClick={ () => navigate('/search') }>
+        <div
+          className={ pathname.includes('/search') ? 'selected' : 'not-selected' }
+          onClick={ () => navigate('/search') }
+        >
           <p>Search</p>
         </div>
 
-        <div onClick={ () => navigate('/favorites') }>
+        <div
+          className={ pathname.includes('/favorites') ? 'selected' : 'not-selected' }
+          onClick={ () => navigate('/favorites') }
+        >
           <p>Favorites</p>
         </div>
 
-        <div onClick={ () => navigate('/profile') }>
+        <div
+          className={ pathname.includes('/profile') ? 'selected' : 'not-selected' }
+          onClick={ () => navigate('/profile') }
+        >
           <p>Profile</p>
         </div>
       </SectionS2>
