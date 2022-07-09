@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import logoWhite from '../../images/logo-white.svg';
 import userPhoto from '../../images/user.svg';
 import { SectionS1, SectionS2 } from './Style';
