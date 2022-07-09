@@ -16,8 +16,15 @@ export const Div = styled.div`
     margin-left: 20px;
   }
 
-  .fav-btn {
+  .favorite {
     margin-left: 20px;
     margin-right: 20px;
+    color: red;
+  }
+
+  .not-favorite {
+    margin-left: 20px;
+    margin-right: 20px;
+    color: grey;
   }
 `
