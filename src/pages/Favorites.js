@@ -1,8 +1,11 @@
 import React from 'react';
+import Header from '../components/Header/Header';
 
 function Favorites() {
   return (
-    <p>Favorites</p>
+    <div>
+      <Header />
+    </div>
   );
 }
 

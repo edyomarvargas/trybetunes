@@ -1,8 +1,11 @@
 import React from 'react';
+import Header from '../components/Header/Header';
 
 function Profile() {
   return (
-    <p>Profile</p>
+    <div>
+      <Header />
+    </div>
   );
 }
 

@@ -1,8 +1,11 @@
 import React from 'react';
+import Header from '../components/Header/Header';
 
 function Album() {
   return (
-    <p>Álbum</p>
+    <div>
+      <Header />
+    </div>
   );
 }
 
