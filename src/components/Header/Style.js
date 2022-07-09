@@ -39,3 +39,28 @@ export const SectionS1 = styled.section`
     margin-left: 5px;
   }
 `
+export const SectionS2 = styled.section`
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+
+  div {
+    width: 33.2%;
+    height: 78px;
+    background: #F0F2F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+  
+  p {
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 700;
+    color: #2FC18C;
+  }
+`

@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import logoWhite from '../../images/logo-white.svg';
 import userPhoto from '../../images/user.svg';
-import { SectionS1 } from './Style';
+import { SectionS1, SectionS2 } from './Style';
 
 function Header() {
+  const navigate = useNavigate();
+
   return (
     <header>
       <SectionS1>
@@ -16,11 +19,19 @@ function Header() {
         </div>
       </SectionS1>
 
-      <section>
-        <Link to="/search">Search</Link>
-        <Link to="/favorites">Favorites</Link>
-        <Link to="/profile">Profile</Link>
-      </section>
+      <SectionS2>
+        <div onClick={ () => navigate('/search') }>
+          <p>Search</p>
+        </div>
+
+        <div onClick={ () => navigate('/favorites') }>
+          <p>Favorites</p>
+        </div>
+
+        <div onClick={ () => navigate('/profile') }>
+          <p>Profile</p>
+        </div>
+      </SectionS2>
     </header>
   );
 }
