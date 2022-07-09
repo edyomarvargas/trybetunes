@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { addSong, readFavoriteSongs } from '../../services/favoriteSongsAPI';
-// import Loading from './Loading';
+import { Div } from './Style';
+import { AiOutlineHeart } from 'react-icons/ai';
 
-function MusicCard({ trackId, music, player }) {
-  // const [loading, setLoading] = useState(false);
+function MusicCard({ trackId, music, player, index }) {
   const [favorites, setFavorites] = useState([]);
   const [isFav, setIsFav] = useState(false);
 
@@ -27,8 +27,6 @@ function MusicCard({ trackId, music, player }) {
   }
 
   const isChecked = () => {
-    const { trackId } = this.props;
-
     const check = favorites.some((favSong) => favSong.trackId === trackId);
 
     setIsFav(check);
@@ -36,23 +34,18 @@ function MusicCard({ trackId, music, player }) {
 
   return (
     <section>
-      <p>{music}</p>
-      <audio data-testid="audio-component" src={player} controls>
-        <track kind="captions" />
-        O seu navegador não suporta o elemento
-        <code>audio</code>
-        .
-      </audio>
-      <label htmlFor="favorite">
-        Favorita
-        <input
-          data-testid={`checkbox-music-${trackId}`}
-          type="checkbox"
-          name="favorite"
-          onChange={handleChange}
-          checked={isFav}
-        />
-      </label>
+      { index === 0 && <hr />}
+      <Div>
+        <p>{music}</p>
+        <audio src={player} controls>
+          <track kind="captions" />
+          O seu navegador não suporta o elemento
+          <code>audio</code>
+          .
+        </audio>
+        <AiOutlineHeart size="26px" className="fav-btn" />
+      </Div>
+      <hr />
     </section>
   );
 }
