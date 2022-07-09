@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Loading from '../../components/Loading/Loading';
 import searchAlbums from '../../services/searchAlbumsAPI';
+import { Div, Section, Form, P } from './Style';
 
 function Search() {
   const [artist, setArtist] = useState('');
   const [disabled, setDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
+  const navigate = useNavigate();
 
   const albumsResult = (
-    <p>
+    <P>
       {`Resultado de álbuns de: ${artist}`}
-    </p>
+    </P>
   );
 
   const handleClick = async (event) => {
@@ -49,7 +51,7 @@ function Search() {
         loading
           ? <Loading />
           : (
-            <form onSubmit={handleClick}>
+            <Form onSubmit={handleClick}>
               <label htmlFor="search">
                 <input
                   type="text"
@@ -64,7 +66,7 @@ function Search() {
               >
                 Pesquisar
               </button>
-            </form>
+            </Form>
           )
       }
       <div>
@@ -76,25 +78,23 @@ function Search() {
         {
           !searchResult && <p>Nenhum álbum foi encontrado</p>
         }
-        <section className="card-container">
+        <Section>
           {
             // Como searchResult pode ser undefined caso a pesquisa não retorne nenhum álbum,
             // preciso garantir que ele tem um valor truthy para fazer o map nele
             searchResult
             && searchResult.map((album) => (
-              <Link
-                key={album.collectionId}
-                to={`/album/${album.collectionId}`}
-              >
-                <div className="album-card">
+                <Div
+                  key={album.collectionId}
+                  onClick={ () => navigate(`/album/${album.collectionId}`)}
+                >
                   <img src={album.artworkUrl100} alt="capa do album" />
                   <h3>{album.collectionName}</h3>
                   <p>{album.artistName}</p>
-                </div>
-              </Link>
+                </Div>
             ))
           }
-        </section>
+        </Section>
 
       </div>
     </div>
