@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
 import MusicCard from '../../components/MusicCard/MusicCard';
 import { readFavoriteSongs } from '../../services/favoriteSongsAPI';
+import { Main, Div } from './Style';
 
 function Favorites() {
   const [favSongs, setFavSongs] = useState([]);
@@ -11,11 +12,16 @@ function Favorites() {
     setFavSongs(getFavSongs);
   }, []);
 
-  return (
-    <div>
-      <Header />
+  const message = (<p>Você ainda não adicionou nenhuma música aos favoritos.</p>);
 
-      {favSongs && (
+  return (
+    <section>
+      <Header />
+      <Div>
+        <p>Músicas favoritas:</p>
+      </Div>
+      <Main>
+        {favSongs && favSongs.length > 0 ? (
           <div>
             {
               favSongs.map((song, index) => (
@@ -25,12 +31,14 @@ function Favorites() {
                   music={song.trackName}
                   player={song.previewUrl}
                   musics={song}
-                  index={ index }
+                  index={index}
                 />
               ))
             }
-          </div>)}
-    </div>
+          </div>)
+          : message}
+      </Main>
+    </section>
   );
 }
 
