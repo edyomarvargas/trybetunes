@@ -33,6 +33,11 @@ export const SectionS1 = styled.section`
 
   div p {
     margin: 5%;
+    font-family: 'Epilogue' sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
   }
 
   div img {

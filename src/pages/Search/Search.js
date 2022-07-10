@@ -21,15 +21,19 @@ function Search() {
   const handleClick = async (event) => {
     event.preventDefault();
 
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    const request = await searchAlbums(artist);
+      const request = await searchAlbums(artist);
 
-    setLoading(false);
-    setSearchResult(request);
+      setLoading(false);
+      setSearchResult(request);
 
-    if (request.length === 0) {
-      setSearchResult(undefined);
+      if (request.length === 0) {
+        setSearchResult(undefined);
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -84,14 +88,14 @@ function Search() {
             // preciso garantir que ele tem um valor truthy para fazer o map nele
             searchResult
             && searchResult.map((album) => (
-                <Div
-                  key={album.collectionId}
-                  onClick={ () => navigate(`/album/${album.collectionId}`)}
-                >
-                  <img src={album.artworkUrl100} alt="capa do album" />
-                  <h3>{album.collectionName}</h3>
-                  <p>{album.artistName}</p>
-                </Div>
+              <Div
+                key={album.collectionId}
+                onClick={() => navigate(`/album/${album.collectionId}`)}
+              >
+                <img src={album.artworkUrl100} alt="capa do album" />
+                <h3>{album.collectionName}</h3>
+                <p>{album.artistName}</p>
+              </Div>
             ))
           }
         </Section>

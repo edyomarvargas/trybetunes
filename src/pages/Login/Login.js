@@ -40,6 +40,13 @@ function Login() {
       <img src={ logo } alt="logo trybetunes" />
       <div>
         <input
+          name="name"
+          placeholder="Digite seu nome"
+          type="text"
+          onChange={enableButton}
+        />
+
+        <input
           name="email"
           placeholder="Digite seu e-mail"
           type="text"
