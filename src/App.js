@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Search from './pages/Search/Search';
 import Album from './pages/Album/Album';
-import Favorites from './pages/Favorites';
+import Favorites from './pages/Favorites/Favorites';
 import Profile from './pages/Profile/Profile';
 import ProfileEdit from './pages/ProfileEdit/ProfileEdit';
 import NotFound from './pages/NotFound/NotFound';
