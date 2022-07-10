@@ -22,6 +22,7 @@ function MusicCard({ trackId, music, player, index, musics }) {
 
   const handleClick = async () => {
     setIsFav(!isFav);
+
     if (!isFav) {
       addSong(musics);
     }

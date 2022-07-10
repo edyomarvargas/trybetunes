@@ -17,7 +17,7 @@ function Header() {
 
         <div>
           <img src={ userPhoto } alt="user" id="user-photo" />
-          <p>{ user.email }</p>
+          <p>{ user.name }</p>
         </div>
       </SectionS1>
 

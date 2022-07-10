@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Search from './pages/Search/Search';
-import Album from './pages/Album';
+import Album from './pages/Album/Album';
 import Favorites from './pages/Favorites';
-import Profile from './pages/Profile';
-import ProfileEdit from './pages/ProfileEdit';
-import NotFound from './pages/NotFound';
+import Profile from './pages/Profile/Profile';
+import ProfileEdit from './pages/ProfileEdit/ProfileEdit';
+import NotFound from './pages/NotFound/NotFound';
 import { createGlobalStyle } from 'styled-components';
 import AppProvider from './context/AppProvider';
 
@@ -39,7 +39,7 @@ function App() {
 
             <Route path="/profile/edit" element={<ProfileEdit />} />
 
-            <Route element={<NotFound />} />
+            <Route path="*" exact={ true } element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </AppProvider>

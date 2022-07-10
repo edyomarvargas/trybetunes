@@ -2,14 +2,18 @@ import React, { useState } from 'react';
 import AppContext from './AppContext';
 
 function AppProvider({ children }) {
+  const [description, setDescription] = useState('Edite o perfil para adicionar uma descrição...');
   const [user, setUser] = useState({
-    email: 'user@email.com',
+    name: 'Usuário',
+    email: '',
     password: '',
   });
 
   const contextValue = {
     user,
     setUser,
+    description,
+    setDescription,
   }
   return (
     <AppContext.Provider value={ contextValue }>

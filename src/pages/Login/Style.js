@@ -31,7 +31,7 @@ export const DivS = styled.div`
   }
 
   input {
-    height: 30px;
+    height: 35px;
     width: 400px;
     border: 1px solid #E1E5EB;
     border-radius: 0px;
@@ -41,14 +41,19 @@ export const DivS = styled.div`
   }
 
   button {
-    height: 30px;
+    height: 35px;
     width: 400px;
     background: #003BE5;
     border-radius: 2px;
-    padding: 8px, 32px, 8px, 32px;
     box-shadow: 0px 4px 4px 0px #00000040;
     margin-top: 20px;
     border: none;
+    
+    font-family: 'Verdana' sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
     color: white;
 
     :hover {
