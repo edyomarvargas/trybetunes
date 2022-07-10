@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Loading from '../../components/Loading/Loading';
 import searchAlbums from '../../services/searchAlbumsAPI';
-import { Div, Section, Form, P } from './Style';
+import { Div, Section, Form, P, P2 } from './Style';
 
 function Search() {
   const [artist, setArtist] = useState('');
@@ -80,7 +80,7 @@ function Search() {
           searchResult && searchResult.length > 0 && albumsResult
         }
         {
-          !searchResult && <p>Nenhum álbum foi encontrado</p>
+          !searchResult && <P2>Nenhum álbum foi encontrado</P2>
         }
         <Section>
           {

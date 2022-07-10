@@ -1,8 +1,9 @@
 import React from 'react';
+import { P } from './Style';
 
 function Loading() {
   return (
-    <p>Carregando...</p>
+    <P>Carregando...</P>
   );
 }
 
