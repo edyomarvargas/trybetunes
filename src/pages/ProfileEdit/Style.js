@@ -16,6 +16,7 @@ export const Div = styled.div`
     width: 80px;
     height: 80px;
     margin-right: 20px;
+    border-radius: 40px;
   }
 
   div input {
@@ -63,7 +64,7 @@ export const Div = styled.div`
     border: 1px solid #3D495C;
     border-radius: 3px;
     text-indent: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 16px;
   }
 
@@ -84,5 +85,19 @@ export const Div = styled.div`
     display: flex;
     align-items: center;
     margin-top: 20px;
+
+    :hover {
+      cursor: pointer;
+    }
+
+    :disabled {
+      background-color: grey;
+      cursor: not-allowed;
+    }
+  }
+
+  .email-check {
+    color: red;
+    margin-top: -15px;
   }
 `
