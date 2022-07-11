@@ -9,6 +9,20 @@ export const SectionS1 = styled.section`
   justify-content: space-between;
   align-items: center;
 
+  section {
+    display: flex;
+    align-items: center;
+  }
+
+  .logout-btn {
+    margin-right: 20px;
+    color: white;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
   #logo {
     width: 117px;
     height: 96px;
@@ -18,6 +32,7 @@ export const SectionS1 = styled.section`
 
   #user-photo {
     width: 30px;
+    border-radius: 20px;
   }
 
   div {
@@ -25,7 +40,7 @@ export const SectionS1 = styled.section`
     align-items: center;
     width: 198.7px;
     height: 41.65px;
-    margin-right: 50px;
+    margin-right: 30px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px;

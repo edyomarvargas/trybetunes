@@ -20,11 +20,19 @@ export const Div = styled.div`
     margin-left: 20px;
     margin-right: 20px;
     color: red;
+
+    :hover {
+      cursor: pointer;
+    }
   }
 
   .not-favorite {
     margin-left: 20px;
     margin-right: 20px;
     color: grey;
+
+    :hover {
+      cursor: pointer;
+    }
   }
 `

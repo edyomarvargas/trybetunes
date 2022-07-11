@@ -4,7 +4,9 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10%
+  margin-top: 10%;
+  margin-left: 40%;
+  position: absolute;
 `
 export const Div1 = styled.div`
   display: flex;
@@ -15,6 +17,7 @@ export const Div1 = styled.div`
   img {
     width: 80px;
     margin-right: 50px;
+    border-radius: 40px;
   }
 
   button {

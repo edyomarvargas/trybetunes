@@ -65,7 +65,6 @@ export const Div = styled.div`
   }
 
   img {
-    /* position: absolute; */
     width: 288px;
     height: 180px;
     border-radius: 6px 6px 0px 0px;
@@ -102,4 +101,16 @@ export const P = styled.p`
   color: #001813;
   margin-left: 5%;
   text-align: center;
+`
+
+export const P2 = styled.p`
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 42px;
+  line-height: 65px;
+  letter-spacing: 0.02em;
+  color: #023031;
+  text-align: center;
+  margin-top: 5%;
 `

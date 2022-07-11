@@ -8,9 +8,9 @@ export const DivS = styled.div`
   flex-direction: column;
 
   img {
-    width: 200px;
+    width: 300px;
     align-self: center;
-    margin-top: 2rem;
+    margin-top: 5rem;
   }
 
   div {
@@ -58,6 +58,11 @@ export const DivS = styled.div`
 
     :hover {
       cursor: pointer;
+    }
+
+    :disabled {
+      background-color: grey;
+      cursor: not-allowed;
     }
   }
 

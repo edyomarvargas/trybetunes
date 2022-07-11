@@ -3,10 +3,12 @@ import AppContext from './AppContext';
 
 function AppProvider({ children }) {
   const [description, setDescription] = useState('Edite o perfil para adicionar uma descrição...');
+  const [cameFromProfileEdit, setCameFromProfileEdit] = useState(false)
   const [user, setUser] = useState({
     name: 'Usuário',
     email: '',
     password: '',
+    image: '',
   });
 
   const contextValue = {
@@ -14,6 +16,8 @@ function AppProvider({ children }) {
     setUser,
     description,
     setDescription,
+    cameFromProfileEdit,
+    setCameFromProfileEdit,
   }
   return (
     <AppContext.Provider value={ contextValue }>
