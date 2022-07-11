@@ -65,7 +65,6 @@ export const Div = styled.div`
   }
 
   img {
-    /* position: absolute; */
     width: 288px;
     height: 180px;
     border-radius: 6px 6px 0px 0px;
