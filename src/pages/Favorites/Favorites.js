@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
 import MusicCard from '../../components/MusicCard/MusicCard';
 import { readFavoriteSongs } from '../../services/favoriteSongsAPI';
-import { Main, Div } from './Style';
+import { Main, Div, P } from './Style';
 
 function Favorites() {
   const [favSongs, setFavSongs] = useState([]);
@@ -12,7 +12,7 @@ function Favorites() {
     setFavSongs(getFavSongs);
   }, []);
 
-  const message = (<p>Você ainda não adicionou nenhuma música aos favoritos.</p>);
+  const message = (<P>Você ainda não adicionou nenhuma música aos favoritos.</P>);
 
   return (
     <section>
