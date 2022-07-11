@@ -1,22 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
+import InfoUpdatePopup from '../../components/InfoUpdatePopup/InfoUpdatePopup';
 import Header from '../../components/Header/Header';
-import userPhoto from '../../images/user.svg';
+import userPhoto from '../../images/user2.svg';
 import { useNavigate } from 'react-router-dom';
 import { Section, Div1, Div2 } from './Style';
 
 function Profile() {
-  const { user, description } = useContext(AppContext);
+  const { user, description, cameFromProfileEdit, setCameFromProfileEdit } = useContext(AppContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCameFromProfileEdit(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div>
       <main>
         <Header />
+        {cameFromProfileEdit && <InfoUpdatePopup />}
 
         <Section>
           <Div1>
-            <img src={userPhoto} alt="user" />
+            <img src={ user.image.length > 0 ? user.image : userPhoto } alt="user" />
             <button
               type="button"
               onClick={ () => navigate('/profile/edit') }
