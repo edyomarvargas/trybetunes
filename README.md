@@ -11,6 +11,7 @@ Esse foi um dos projetos desenvolvidos como critério de avaliação do módulo 
   - [Sobre a aplicação](#sobre-a-aplicação)
   - [Tecnologias utilizadas](#tecnologias-utilizadas) 
   - [Código limpo](#código-limpo)
+  - [Preview](#preview)
   
 ## Habilidades
 Neste projeto, as seguintes habilidades foram desenvolvidas:
