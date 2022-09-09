@@ -10,7 +10,7 @@ export const DivS = styled.div`
   img {
     width: 300px;
     align-self: center;
-    margin-top: 5rem;
+    margin-top: 1.5rem;
   }
 
   div {
@@ -68,7 +68,7 @@ export const DivS = styled.div`
 
   @media (max-width: 750px) {
     img {
-      margin-top: 3rem;
+      margin-top: 1.5rem;
     }
 
     div {
@@ -79,12 +79,13 @@ export const DivS = styled.div`
 
   @media (max-width: 500px) {
     img {
-      margin-top: 4rem;
+      margin-top: 1.5rem;
     }
 
     div {
       width: 320px;
       height: 240px;
+      margin-top: 2rem;
     }
 
     input {
