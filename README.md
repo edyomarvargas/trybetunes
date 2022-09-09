@@ -42,3 +42,36 @@ Esta aplicação é capaz de:
   Essa aplicação foi desenvolvida seguindo os padrões de Código Limpo exigidos pela <a href="https://betrybe.com">Trybe<a/> através de suas regras de Lint para aplicações front-end.
   
   Para mais informações sobre o Lint da Trybe, acesse <a href="https://github.com/betrybe/eslint-config-trybe">esse repositório</a>.
+  
+## Preview
+| Login |
+| --- |
+| <img src="src/images/app-preview/login.png" width="1080"> |
+  
+| Search |
+| --- |
+| <img src="src/images/app-preview/search.png" width="1080"> |
+  
+| Artist search |
+| --- |
+| <img src="src/images/app-preview/search_artist.png" width="1080"> |
+  
+| Favorites |
+| --- |
+| <img src="src/images/app-preview/favorites.png" width="1080"> |
+  
+| Profile |
+| --- |
+| <img src="src/images/app-preview/profile.png" width="1080"> |
+  
+| Edit profile |
+| --- |
+| <img src="src/images/app-preview/profile_edit.png" width="1080"> |
+  
+| Edited profile |
+| --- |
+| <img src="src/images/app-preview/edited_profile.png" width="1080"> |
+  
+| Page not found |
+| --- |
+| <img src="src/images/app-preview/page_not_found.png" width="1080"> |
